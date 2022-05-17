@@ -30,5 +30,10 @@ Para el proposito de la app web, al tener el auto-Scaling group activo para un m
 con esto se estima un consumo mensual de alrededor de unos 70 dolares (en 3 días se estimó un crecimiento de 6-7 dolares en aws Academy)
 ## Costo/beneficio
 Según este costo estimado el equipo considera una muy buena relación Costo/beneficio, por tan solo 70 dolares se tiene la página web con alta disponibilidad, rapidez y confiabilidad
-## Diseño
+## Diseño de despliegue
 ![Diseño](https://user-images.githubusercontent.com/73863024/168914275-f678bc54-697d-4a06-87f6-b2a2058f0054.jpeg)
+## Diseño de arquitectura 
+![DiseñoArquitectura](https://user-images.githubusercontent.com/73863024/168915135-44f1bbfc-8859-4c28-b457-c467e19e990e.jpeg)
+- Como podemos observar nuestro diseño para la arquitectura consistia en una arquitectura por capas (presentación, lógica del negocio y persistencia de datos), 2 de estas controladas por un ALB, para la escalabilidad se plantearon varias replicas de las instancias, los balanceadores de carga, las replicaciones en la BD, y para la seguridad se planteó convertir las capas en subnets, sin embargo al final se decidió meter la capa de presentación y de lógica del negocio en la misma subnet.
+- De herramientas se utilizó AWS para el despliegue y se planteó Cloudfare para certificados y cdn, esto debido a que aws no permite a los usuarios de la universidad registrar el https con nuestros certificados
+- El replica set de mongo automaticamente se encarga de distribuir peticiones en caso de que un nodo este sobrecargado o si se especifica el comando el read siempre se hará en las replicas secundarias
