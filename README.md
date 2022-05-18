@@ -34,6 +34,24 @@ Según este costo estimado el equipo considera una muy buena relación Costo/ben
 ![Diseño](https://user-images.githubusercontent.com/73863024/168914275-f678bc54-697d-4a06-87f6-b2a2058f0054.jpeg)
 ## Diseño de arquitectura 
 ![DiseñoArquitectura](https://user-images.githubusercontent.com/73863024/168915135-44f1bbfc-8859-4c28-b457-c467e19e990e.jpeg)
-- Como podemos observar nuestro diseño para la arquitectura consistia en una arquitectura por capas (presentación, lógica del negocio y persistencia de datos), 2 de estas controladas por un ALB, para la escalabilidad se plantearon varias replicas de las instancias, los balanceadores de carga, las replicaciones en la BD, y para la seguridad se planteó convertir las capas en subnets, sin embargo al final se decidió meter la capa de presentación y de lógica del negocio en la misma subnet.
+- Como podemos observar nuestro diseño para la arquitectura consistia en una arquitectura por capas (presentación, lógica del negocio y persistencia de datos), 2 de estas controladas por un ALB, para la escalabilidad se plantearon varias replicas de las instancias, los balanceadores de carga, las replicaciones en la BD, y para la seguridad se convertirtieron las capas en subnets, sin embargo al final se decidió meter la capa de presentación y de lógica del negocio en la misma subnet.
 - De herramientas se utilizó AWS para el despliegue y se planteó Cloudfare para certificados y cdn, esto debido a que aws no permite a los usuarios de la universidad registrar el https con nuestros certificados
 - El replica set de mongo automaticamente se encarga de distribuir peticiones en caso de que un nodo este sobrecargado o si se especifica el comando el read siempre se hará en las replicas secundarias
+## Resumen
+### Disponibilidad
+- Load Balancer Front/back
+- autoScaling-Group
+- replicación BD Mongo
+### Seguridad
+- División por subnets
+- Todas las capas de la aplicación en subnets privadas
+- restricción de puertos
+- Ingreso a las maquinas a través del bastión host
+- Encryptación de la data en la web a través de Cloudflare
+### Rendimiento
+- Load Balancer
+- CDN con cloudflare
+- Aumento de velocidad con cloudflare 
+![image](https://user-images.githubusercontent.com/73863024/168957653-aa661fab-deeb-4680-bd91-270dbd2e4101.png)
+
+
