@@ -27,7 +27,7 @@ https://github.com/svelezp9/Proyecto2
 2) Permitir entrada de datos únicamente por puertos necesarios para el aplicativo, bloquear los otros
 ## Costo estimado
 Para el proposito de la app web, al tener el auto-Scaling group activo para un máximo de 3 instancias para el front y 2 para el back, más las 3 bases de datos y el bastión host se tendrán un total de 9 maquinas al tiempo,
-con esto se estima un consumo mensual de alrededor de unos 70 dolares (en 3 días se estimó un crecimiento de 6-7 dolares en aws Academy)
+con esto se estima un consumo mensual de alrededor de unos 150 dolares (en 1 días se estimó un crecimiento de 6-7 dolares en aws Academy)
 ## Costo/beneficio
 Según este costo estimado el equipo considera una muy buena relación Costo/beneficio, por tan solo 70 dolares se tiene la página web con alta disponibilidad, rapidez y confiabilidad
 ## Diseño de despliegue
