@@ -1,8 +1,8 @@
 # Informe proyecto 2 Telematica
 ### Integrantes
-  - Sebastián Vélez Pulgarín (svelezp9@eafit.edu.co) (Disponibilidad, Rendimiento)
+  - Sebastián Vélez Pulgarín (svelezp9@eafit.edu.co) (Disponibilidad)
   - Antoine Chavane de Dalmassy Córdoba (achavaned@eafit.edu.co) (Seguridad)
-  - Felipe Álvarez Benítez (falvarezb@eafit.edu.co) (Diseño)
+  - Felipe Álvarez Benítez (falvarezb@eafit.edu.co) (Rendimiento)
 ## Github
 https://github.com/svelezp9/Proyecto2
 ## Requerimientos del despliegue
